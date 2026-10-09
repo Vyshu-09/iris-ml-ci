@@ -36,7 +36,7 @@ class TestIrisPipeline(unittest.TestCase):
             "petal_width": 0.2
         }])
         prediction = model.predict(sample)[0]
-        self.assertEqual(prediction, "Wrong-species")
+        self.assertEqual(prediction, "Iris-setosa")
 
 if __name__ == "__main__":
     unittest.main()
