@@ -39,3 +39,13 @@ jobs:
  
       - name: Run automated ML tests
         run: python -m unittest discover -v
+ 
+      - name: Upload validated ML artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: iris-ml-artifacts
+          path: |
+            iris_model.pkl
+            metrics.json
+          if-no-files-found: error
+          retention-days: 7
